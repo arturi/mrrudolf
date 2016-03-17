@@ -1,6 +1,6 @@
 # Mr Rudolf
 
-![Mr Rudolf’s logo](assets/mrrudolf.svg)
+<img src="assets/mrrudolf.png" alt="Mr Rudolf’s logo">
 
 Is a tiny personal helper robot I made. Currenty Mr Rudolf just answers the door.
 In the future he might do something else. Works through Telegram, other services can be added too.
