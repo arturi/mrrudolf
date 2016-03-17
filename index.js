@@ -22,7 +22,7 @@ function telegramSendMessage (user, message) {
   }, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       console.log(body)
-      console.log('message "' + message + '" was sent to ' + user)
+      console.log('Message "' + message + '" was sent to ' + user)
     } else {
       console.log(error)
     }
@@ -42,7 +42,7 @@ function telegramSendPhoto (user, photo) {
   }, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       console.log(body)
-      console.log('photo was sent to ' + user)
+      console.log('Photo was sent to ' + user)
     } else {
       console.log(error)
     }
@@ -51,9 +51,12 @@ function telegramSendPhoto (user, photo) {
 
 router.addRoute('/api/:token/dingDong', function (req, res, match) {
   if (match.params.token !== config.token) {
-    res.end('wrong token, go away\n')
+    res.end('Wrong token, go away\n')
+    console.log('Hm, request with a wrong token.')
     return
   }
+
+  console.log('Ding dong requested!')
 
   telegramSendMessage(
     config.telegram.users.artur,
@@ -65,7 +68,7 @@ router.addRoute('/api/:token/dingDong', function (req, res, match) {
     pickRandom(config.photos)
   )
 
-  res.end('oh hello, somebody at the door\n')
+  res.end('Oh hello, somebody at the door\n')
 })
 
 var server = http.createServer(function (req, res) {
@@ -73,6 +76,7 @@ var server = http.createServer(function (req, res) {
   if (match) {
     match.fn(req, res, match)
   } else {
+    console.log('Page not found.')
     res.statusCode = 404
     res.end('not found\n')
   }
