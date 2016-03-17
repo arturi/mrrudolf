@@ -1,0 +1,24 @@
+{
+  "name": "mrrudolf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Artur Paikin",
+  "license": "ISC",
+  "dependencies": {
+    "routes": "2.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturi/mrrudolf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arturi/mrrudolf/issues"
+  },
+  "homepage": "https://github.com/arturi/mrrudolf#readme"
+}
